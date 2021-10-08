@@ -3,10 +3,10 @@ import { withStyles } from "@material-ui/styles";
 import styles from "./Dashboard.styles";
 
 function Dashboard(props) {
-  const {classes} = props;
+  const {classes, todo} = props;
 
   return (
-    <div className={classes.title}>Dashboard</div>
+    <div className={classes.title}>Todo: {todo}</div>
   );
 };
 
