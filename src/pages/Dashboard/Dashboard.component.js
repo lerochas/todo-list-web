@@ -1,16 +1,19 @@
 import React from 'react';
 import { withStyles } from "@material-ui/styles";
+import TodoRow from '../components/TodoRow';
 import styles from "./Dashboard.styles";
 
 function Dashboard(props) {
   const {classes, todos} = props;
 
   return (
-    <div className={classes.title}>
-      Todo: {todos.map((todo) => {
-        return (<p key={`${todo.todo}`}> {todo.todo} </p>)
+    <table >
+      <tbody className={classes.title}>
+      {todos.map((todo, key) => {
+        return (<TodoRow todo={todo} key={key} />)
       })}
-    </div>
+      </tbody>
+    </table>
   );
 };
 
