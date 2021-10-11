@@ -1,14 +1,16 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import api from '../../services/api';
-import { todo } from '../components/todosDefaultState';
 import DashboardComponent from './Dashboard.component';
 
 export default function DashboardContainer(){
-  const [todos, setTodos] = useState(todo);
+  const [todos, setTodos] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const getTodos = useCallback(async () => {
+    const getTodos = useCallback(async () => {
+    setLoading(true);
     const response = await api.get("todos/someone");
 
+    setLoading(false);
     setTodos(response.data.todos)
   }, [setTodos]);
 
@@ -17,6 +19,6 @@ export default function DashboardContainer(){
   }, [getTodos]);
 
   return (
-    <DashboardComponent todos={todos} />
+    <DashboardComponent todos={todos} loading={loading} />
   );
 }
