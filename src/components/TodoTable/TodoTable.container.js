@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import api from '../../services/api';
-import DashboardComponent from './Dashboard.component';
+import TodoTableComponent from './TodoTable.component';
 
-export default function DashboardContainer(){
+export default function TodoTableContainer(){
   const [todos, setTodos] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -19,6 +19,6 @@ export default function DashboardContainer(){
   }, [getTodos]);
 
   return (
-    <DashboardComponent todos={todos} loading={loading} />
+    <TodoTableComponent todos={todos} loading={loading} />
   );
 }
