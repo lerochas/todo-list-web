@@ -4,8 +4,9 @@ export default (theme) => {
     root: {},
     title: {
       color: "#363f5f",
-      padding: "5px",
-      fontSize: "20px",
+      paddingBottom: "2px",
+      textAlign: "center",
+      fontSize: "16px",
     },
   };
 };

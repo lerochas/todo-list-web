@@ -14,6 +14,17 @@ function TodoTable(props) {
         component={() => (
           <table >
             <tbody className={classes.title}>
+            <tr>
+              <th className={classes.title}>
+                Usuário
+              </th>
+              <th className={classes.title}>
+                Tarefa
+              </th>
+              <th className={classes.title}>
+                Status
+              </th>
+            </tr>
               {todos === null ? (
                   isLoading
                 ): 

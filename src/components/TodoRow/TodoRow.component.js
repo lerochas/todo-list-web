@@ -8,15 +8,15 @@ function TodoRow(props) {
   return (
     <Fragment key={key}>
       <tr>
-        <th width={"75%"} className={classes.title}>
+        <td width={"30%"} className={classes.title}>
           {todo.username}
-        </th>
-        <th width={"75%"} className={classes.title}>
+        </td>
+        <td width={"75%"} className={classes.title}>
           {todo.todo}
-        </th>
-        <th width={"75%"} className={classes.title}>
+        </td>
+        <td width={"30%"} className={classes.title}>
           {todo.isDone === true ? "Feito" : "Pendente"}
-        </th>
+        </td>
       </tr>
     </Fragment>
   );

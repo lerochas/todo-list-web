@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
   main {
+    border-left: 8px solid #00e6b8;
     background-image: linear-gradient(to bottom right, #eafaf4, #fff);
     padding-bottom: 20px;
     border-top-right-radius: 5px;

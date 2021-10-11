@@ -3,16 +3,9 @@ export default (theme) => {
   return {
     root: {},
     title: {
-      fontSize: '58px',
-    },
-    noData: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "20vh",
-      fontSize: "16px",
       color: "#363f5f",
-      opacity: "60%",
+      paddingBottom: "15px",
+      fontSize: "22px",
     }
   };
 };
