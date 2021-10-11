@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Fragment }from 'react';
+import GlobalStyle from '../src/global/GlobalStyle'
 import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
-    <Dashboard />
+    <Fragment>
+      <GlobalStyle />
+      <Dashboard />
+    </Fragment>
   );
 }
 
