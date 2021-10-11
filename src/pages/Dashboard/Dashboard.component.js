@@ -3,10 +3,14 @@ import { withStyles } from "@material-ui/styles";
 import styles from "./Dashboard.styles";
 
 function Dashboard(props) {
-  const {classes, todo} = props;
+  const {classes, todos} = props;
 
   return (
-    <div className={classes.title}>Todo: {todo}</div>
+    <div className={classes.title}>
+      Todo: {todos.map((todo) => {
+        return (<p key={`${todo.todo}`}> {todo.todo} </p>)
+      })}
+    </div>
   );
 };
 
