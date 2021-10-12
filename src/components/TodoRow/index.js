@@ -1,1 +1,1 @@
-export {default} from './TodoRow.component';
+export {default} from './TodoRow.container';

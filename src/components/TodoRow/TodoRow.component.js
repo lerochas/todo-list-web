@@ -7,7 +7,7 @@ import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
 import styles from "./TodoRow.styles";
 
 function TodoRow(props) {
-  const { classes, todo, key } = props;
+  const { classes, todo, key, deleteTodo } = props;
 
   return (
     <Fragment key={key}>
@@ -24,11 +24,11 @@ function TodoRow(props) {
         </td>
         <td>
           <IconButton aria-label="edit" className={classes.icon} >
-            <CreateIcon />
+            <CreateIcon todo={todo}/>
           </IconButton>
         </td>
         <td>
-          <IconButton aria-label="delete" className={classes.icon} >
+          <IconButton aria-label="delete" className={classes.icon} onClick={deleteTodo} >
             <DeleteIcon />
           </IconButton>
         </td>

@@ -1,6 +1,7 @@
-import React, { useCallback } from 'react';
+import React, { Fragment, useCallback } from 'react';
 import { useFormik } from "formik";
-import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
 import api from '../../services/api';
 import CardAddNewTodoComponent from './CardAddNewTodo.component';
 
@@ -33,6 +34,9 @@ export default function CardAddNewTodoContainer(){
   });
 
   return (
-    <CardAddNewTodoComponent formik={formik} />
-  );
+    <Fragment>
+      <CardAddNewTodoComponent formik={formik} />
+      <ToastContainer />
+    </Fragment>
+    );
 }
