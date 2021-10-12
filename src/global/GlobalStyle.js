@@ -28,10 +28,6 @@ const GlobalStyle = createGlobalStyle`
   .css-hip9hq-MuiPaper-root-MuiAppBar-root {
     background-color: #fff !important;
   }
-
-  .css-i4bv87-MuiSvgIcon-root {
-    color: #00e6b8 !important;
-  }
 `;
 
 export default GlobalStyle;

@@ -9,12 +9,15 @@ export default (theme) => {
       fontSize: "16px",
     },
     check: {
-      marginLeft: "25px",
+      marginLeft: "50%",
       color: "#009900",
     },
     close: {
-      marginLeft: "25px",
+      marginLeft: "50%",
       color: "#b41414",
     },
+    icon: {
+      color: "#BFBFBF !important",
+    }
   };
 };
