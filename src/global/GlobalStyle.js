@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     border-left: 8px solid #00e6b8;
     background-image: linear-gradient(to bottom right, #eafaf4, #fff);
     padding-bottom: 20px;
+    padding-left: 100px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);

@@ -2,11 +2,19 @@
 export default (theme) => {
   return {
     root: {},
-    title: {
+    text: {
       color: "#363f5f",
       paddingBottom: "2px",
-      textAlign: "center",
+      paddingLeft: "25px",
       fontSize: "16px",
+    },
+    check: {
+      marginLeft: "25px",
+      color: "#009900",
+    },
+    close: {
+      marginLeft: "25px",
+      color: "#b41414",
     },
   };
 };

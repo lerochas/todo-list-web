@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { withStyles } from "@material-ui/styles";
+import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
 import styles from "./TodoRow.styles";
 
 function TodoRow(props) {
@@ -8,14 +9,15 @@ function TodoRow(props) {
   return (
     <Fragment key={key}>
       <tr>
-        <td width={"30%"} className={classes.title}>
-          {todo.username}
-        </td>
-        <td width={"75%"} className={classes.title}>
+        <td width={"15%"} className={classes.text}>
           {todo.todo}
         </td>
-        <td width={"30%"} className={classes.title}>
-          {todo.isDone === true ? "Feito" : "Pendente"}
+        <td width={"7%"} className={classes.text}>
+          {
+            todo.isDone === true ? 
+            <AiOutlineCheck className={classes.check} /> : 
+            <AiOutlineClose className={classes.close} />
+          }
         </td>
       </tr>
     </Fragment>
