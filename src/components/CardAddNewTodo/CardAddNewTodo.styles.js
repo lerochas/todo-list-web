@@ -20,7 +20,7 @@ export default (theme) => {
       },
     },
     textField: {
-      width: "97%",
+      width: "99%",
       margin: "3px",
       paddingLeft: "25px",
     },

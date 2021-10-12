@@ -10,48 +10,53 @@ function CardAddNewTodo(props) {
   return (
     <Fragment>
       <h2 className={classes.h2}>Adicionar Nova Tarefa</h2>
-      <Grid
-        container
-        component="main"
-        className={classes.root}
-      >
-        <Grid item lg={9} xs={12}>
-          <InputLabel id="todo-label" className={classes.label}>Tarefa</InputLabel>
-          <TextField
-            id="todo"
-            name="todo.todo"
-            type="string"
-            variant="outlined"
-            className={classes.textField}
-            value={formik.values.todo.todo}
-            onChange={formik.handleChange}
-            error={Boolean(formik.errors.todo?.todo)}
-            helperText={formik.errors.todo?.todo}
-          />
+      <form onSubmit={formik.handleSubmit}>
+        <Grid
+          container
+          component="main"
+          className={classes.root}
+        >
+          <Grid item lg={9} xs={12}>
+            <InputLabel id="todo-label" className={classes.label}>Tarefa</InputLabel>
+            <TextField
+              id="todo"
+              name="todo"
+              type="string"
+              variant="outlined"
+              className={classes.textField}
+              value={formik.values.todo}
+              onChange={formik.handleChange}
+              error={Boolean(formik.errors.todo)}
+              helperText={formik.errors.todo}
+            />
+            </Grid>
+          <Grid item lg={3} xs={12}>
+            <InputLabel id="status-label" className={classes.label}>Status</InputLabel>
+            <Select
+              id="isDone"
+              name="isDone"
+              className={classes.label}
+              value={formik.values.isDone}
+              onChange={formik.handleChange}
+              error={Boolean(formik.errors.isDone)}
+              autoWidth
+            >
+              <MenuItem value={true}>Concluído</MenuItem>
+              <MenuItem value={false}>Pendente</MenuItem>
+            </Select>
           </Grid>
-        <Grid item lg={3} xs={12}>
-          <InputLabel id="status-label">Status</InputLabel>
-          <Select
-            id="isDone"
-            name="todo.isDone"
-            value={formik.values.todo.isDone}
-            onChange={formik.handleChange}
-            error={Boolean(formik.errors.todo?.isDone)}
-            autoWidth
-          >
-            <MenuItem value={true}>Concluído</MenuItem>
-            <MenuItem value={false}>Pendente</MenuItem>
-          </Select>
+          <Grid item lg={12} xs={12}>
+            <Button 
+            type="submit" 
+            variant="contained" 
+            className={classes.btn}
+            onClick={() => window.location.reload()}
+            >
+              Adicionar
+            </Button>
+            </Grid>
         </Grid>
-        <Grid item lg={12} xs={12}>
-          <Button 
-          variant="contained" 
-          className={classes.btn}
-          >
-            Adicionar
-          </Button>
-          </Grid>
-      </Grid>
+      </form>
     </Fragment>
   );
 };

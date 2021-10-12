@@ -1,27 +1,33 @@
 import React, { useCallback } from 'react';
 import { useFormik } from "formik";
+import { toast } from "react-toastify";
 import api from '../../services/api';
 import CardAddNewTodoComponent from './CardAddNewTodo.component';
 
 export default function CardAddNewTodoContainer(){
-
   const onSubmit = useCallback(
     async (values, actions) => {
       const response = await api.post("todo",
         values,
       );
-      actions.setSubmitting(response.data.todo);
-      console.log(response.data.todo);
+      const obj = response.data.todo;
+      actions.setSubmitting(obj.username, obj.todo, obj.isDone);
+      
+      if (response.status === 200) {
+        return toast.success("Tarefa adicionada com sucesso!");
+      }
+      if (response.status !== 200) {
+        return toast.error("Algo deu errado...");
+      }
     },
     []
   );
 
   const formik = useFormik({
     initialValues: {
-      todo: {
-        todo: "",
-        isDone: false,
-      },
+      username: "someone",
+      todo: "",
+      isDone: false,
     },
     onSubmit,
   });
