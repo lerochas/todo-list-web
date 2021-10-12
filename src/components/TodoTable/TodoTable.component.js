@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { withStyles } from "@material-ui/styles";
-import MainCardWithLoader from '../MainCardWithLoader'
+import MainCardWithLoader from '../MainCardWithLoader';
 import TodoRow from '../TodoRow';
 import styles from "./TodoTable.styles";
 
