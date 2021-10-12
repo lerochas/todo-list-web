@@ -12,7 +12,6 @@ function MainCardWithLoader(props) {
       item
       component="main"
       className={classes.root}
-      style={{ height: "97%" }}
     >
       <CssBaseline />
       {isReady ? (

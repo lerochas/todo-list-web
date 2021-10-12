@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useFormik } from "formik";
 import api from '../../services/api';
-import ModalAddTodoComponent from './ModalAddTodo.component';
+import CardAddNewTodoComponent from './CardAddNewTodo.component';
 
-export default function TodoTableContainer(){
+export default function CardAddNewTodoContainer(){
 
   const onSubmit = useCallback(
     async (values, actions) => {
@@ -21,13 +21,12 @@ export default function TodoTableContainer(){
       todo: {
         todo: "",
         isDone: false,
-        hasAttachment: false,
       },
     },
     onSubmit,
   });
 
   return (
-    <ModalAddTodoComponent formik={formik} />
+    <CardAddNewTodoComponent formik={formik} />
   );
 }

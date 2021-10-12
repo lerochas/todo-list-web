@@ -1,14 +1,13 @@
-import React, { useState, Fragment } from "react";
-import { Container, Grid, Button } from "@material-ui/core";
+import React, { Fragment } from "react";
+import { Container, Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import MenuAppBar from "../../components/MenuAppBar";
 import TodoTable from "../../components/TodoTable";
-import ModalAddTodo from "../../components/ModalAddTodo";
+import CardAddNewTodo from "../../components/CardAddNewTodo";
 import styles from "./Dashboard.styles";
 
 function Statements(props) {
   const { classes } = props;
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
     <Fragment>
@@ -19,20 +18,11 @@ function Statements(props) {
             <TodoTable />
           </Grid>
         </Grid>
-        <div className={classes.btnPosition}>
-         <Button 
-          variant="contained" 
-          className={classes.btn}
-          onClick={() => setIsModalVisible(true)}
-          >
-            Adicionar Tarefa
-          </Button>
-          {isModalVisible ? (
-            <ModalAddTodo onClose={() => setIsModalVisible(false)}>
-              <h1>teste modal</h1>
-            </ModalAddTodo>
-          ): null}
-        </div>
+        <Grid container spacing={3}>
+          <Grid item lg={12} md={12} sm={12} xs={12}>
+            <CardAddNewTodo />
+          </Grid>
+        </Grid>
       </Container>
     </Fragment>
   );

@@ -9,6 +9,7 @@ function TodoTable(props) {
 
   return (
     <Fragment>
+      <h2 className={classes.h2}>Lista de Tarefas</h2>
       <MainCardWithLoader
         ready={!isLoading}
         component={() => (
