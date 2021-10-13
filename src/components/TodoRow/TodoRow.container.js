@@ -12,7 +12,7 @@ export default function TodoRowContainer(props){
     const response = await api.delete(`todo/${todo._id}`);
 
     if (response.status === 200) {
-      return toast.success("Tarefa excluída com sucesso!");
+      return toast.success("Tarefa excluída com sucesso! Atualize a página");
     }
     if (response.status !== 200) {
       return toast.error("Algo deu errado...");
@@ -29,7 +29,7 @@ export default function TodoRowContainer(props){
       actions.setSubmitting(obj.todo, obj.isDone);
       
       if (response.status === 200) {
-        return toast.success("Tarefa alterada com sucesso!");
+        return toast.success("Tarefa alterada com sucesso! Atualize a página");
       }
       if (response.status !== 200) {
         return toast.error("Algo deu errado...");

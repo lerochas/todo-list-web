@@ -28,6 +28,8 @@ const GlobalStyle = createGlobalStyle`
   .css-hip9hq-MuiPaper-root-MuiAppBar-root {
     background-color: #fff !important;
   }
+
+  
 `;
 
 export default GlobalStyle;

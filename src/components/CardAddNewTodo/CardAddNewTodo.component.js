@@ -50,7 +50,6 @@ function CardAddNewTodo(props) {
             type="submit" 
             variant="contained" 
             className={classes.btn}
-            onClick={() => window.location.reload()}
             >
               Adicionar
             </Button>

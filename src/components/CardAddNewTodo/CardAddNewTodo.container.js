@@ -15,7 +15,7 @@ export default function CardAddNewTodoContainer(){
       actions.setSubmitting(obj.username, obj.todo, obj.isDone);
       
       if (response.status === 200) {
-        return toast.success("Tarefa adicionada com sucesso!");
+        return toast.success("Tarefa adicionada com sucesso! Atualize a página");
       }
       if (response.status !== 200) {
         return toast.error("Algo deu errado...");
@@ -28,7 +28,7 @@ export default function CardAddNewTodoContainer(){
     initialValues: {
       username: "someone",
       todo: "",
-      isDone: false,
+      isDone: "",
     },
     onSubmit,
   });
