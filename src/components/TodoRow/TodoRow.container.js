@@ -1,4 +1,5 @@
 import React, { useCallback, Fragment } from 'react';
+import { useFormik } from "formik";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from 'react-toastify';
 import api from '../../services/api';
@@ -18,10 +19,39 @@ export default function TodoRowContainer(props){
     }
   }, [todo._id]);
 
+  const onSubmit = useCallback(
+    async (values, actions) => {
+      const response = await api.put(`todo/${todo._id}`,
+        values.todo,
+        values.isDone,
+      );
+      const obj = response.data.todo;
+      actions.setSubmitting(obj.todo, obj.isDone);
+      
+      if (response.status === 200) {
+        return toast.success("Tarefa alterada com sucesso!");
+      }
+      if (response.status !== 200) {
+        return toast.error("Algo deu errado...");
+      }
+    },
+    [todo._id]
+  );
+
+  const formik = useFormik({
+    initialValues: {
+      todo: todo.todo,
+    },
+    onSubmit,
+  });
 
   return (
     <Fragment>
-      <TodoRowComponent todo={todo} deleteTodo={deleteTodo}/>
+      <TodoRowComponent 
+        formik={formik} 
+        todo={todo} 
+        deleteTodo={deleteTodo}  
+      />
       <tr>
         <td>
           <ToastContainer />
