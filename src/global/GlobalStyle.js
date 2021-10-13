@@ -24,12 +24,13 @@ const GlobalStyle = createGlobalStyle`
     border-bottom-right-radius: 5px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
   }
-  
   .css-hip9hq-MuiPaper-root-MuiAppBar-root {
     background-color: #fff !important;
   }
-
-  
+  .Toastify__toast-theme--light {
+    color: #fff;
+    background-color: #3E3E3E;
+  }
 `;
 
 export default GlobalStyle;
