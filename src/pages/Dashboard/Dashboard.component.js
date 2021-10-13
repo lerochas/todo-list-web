@@ -6,7 +6,10 @@ import TodoTable from "../../components/TodoTable";
 import CardAddNewTodo from "../../components/CardAddNewTodo";
 import styles from "./Dashboard.styles";
 
-function Statements(props) {
+//A tela Dashboard está apresentando uma barra de menu no topo (MenuAppBar)
+//E dois cards. O Primeiro deles (TodoTable) retorna a tabela com as tarefas cadastradas, além de ter as funções de editar e excluir as tarefas
+//O segundo card (CardAddNewTodo) é responsável por cadastrar uma nova tarefa
+function Dashboard(props) {
   const { classes } = props;
 
   return (
@@ -28,4 +31,4 @@ function Statements(props) {
   );
 }
 
-export default withStyles(styles)(Statements);
+export default withStyles(styles)(Dashboard);

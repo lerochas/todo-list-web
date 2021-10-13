@@ -8,14 +8,22 @@ import CreateIcon from '@mui/icons-material/Create';
 import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
 import styles from "./TodoRow.styles";
 
+//TodoRow está mapeando e exibindo, linha a linha, cada tarefa
+//Ele exibe a tarefa, o status, e dois ícones para as funções de editar e excluir tarefa
 function TodoRow(props) {
   const { classes, formik, todo, deleteTodo, key } = props;
   const [ isInEditMode, setIsInEditMode ] = useState(false);
 
+  //a função changeEditMode é responsável por alterar o estado de isInEditMode
+  //esse estado é utilizado para alterar a UI
+  //quando isInEditMode é igual a false, a tela fica com a configuração padrão
+  //quando ele é igual a true, a tela fica com a configuração de alterar tarefa
   const changeEditMode = () => {
     setIsInEditMode(!isInEditMode);
   }
 
+  //Esta função é responsável por apresentar campos para edição da tarefa quando
+  //o ícone de edição recebe click 
   const renderEditView = () => {
     return (
       <>
@@ -65,6 +73,7 @@ function TodoRow(props) {
     )
   }
 
+  //Esta é a aparência padrão do componente, quando a tela é renderizada é assim que ela estará
   const renderDefaultView = () => {
     return (
       <>

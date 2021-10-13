@@ -5,7 +5,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import api from '../../services/api';
 import CardAddNewTodoComponent from './CardAddNewTodo.component';
 
+//Este container é responsável por mandar requisições para adicionar uma nova tarefa na API
 export default function CardAddNewTodoContainer(){
+  //Função responsável por enviar requisição post para o back-end
   const onSubmit = useCallback(
     async (values, actions) => {
       const response = await api.post("todo",
@@ -13,10 +15,11 @@ export default function CardAddNewTodoContainer(){
       );
       const obj = response.data.todo;
       actions.setSubmitting(obj.username, obj.todo, obj.isDone);
-      
+      //caso a requisição seja feita com sucesso, é retornado um toast na tela informando que a tarefa foi adicionada
       if (response.status === 200) {
         return toast.success("Tarefa adicionada com sucesso! Atualize a página");
       }
+      //caso dê erro na requisição, é retornado um toast informando que algo deu errado
       if (response.status !== 200) {
         return toast.error("Algo deu errado...");
       }

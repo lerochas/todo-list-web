@@ -4,6 +4,9 @@ import MainCardWithLoader from '../MainCardWithLoader';
 import TodoRow from '../TodoRow';
 import styles from "./TodoTable.styles";
 
+//TodoTable é a tabela que apresenta as tarefas, eu coloquei um loader para ser exibido enquanto os dados não são carregados
+//A tabela tem duas colunas: tarefa e status
+//Os dados estão vindo do componente TodoRow, que exibe cada tarefa numa linha da tabela
 function TodoTable(props) {
   const {classes, todos, loading: isLoading} = props;
 

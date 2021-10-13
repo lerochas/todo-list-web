@@ -5,9 +5,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import api from '../../services/api';
 import TodoRowComponent from './TodoRow.component';
 
+//Este container está fazendo as requisições para excluir e alterar tarefa
 export default function TodoRowContainer(props){
   const {todo} = props;
 
+  //requisição para deletar tarefa
   const deleteTodo = useCallback(async () => {
     const response = await api.delete(`todo/${todo._id}`);
 
@@ -19,6 +21,7 @@ export default function TodoRowContainer(props){
     }
   }, [todo._id]);
 
+  //requisição para alterar tarefa
   const onSubmit = useCallback(
     async (values, actions) => {
       const response = await api.put(`todo/${todo._id}`,
@@ -38,6 +41,7 @@ export default function TodoRowContainer(props){
     [todo._id]
   );
 
+  //o formik lida com envios de formulários
   const formik = useFormik({
     initialValues: {
       todo: todo.todo,

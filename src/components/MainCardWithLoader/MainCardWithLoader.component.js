@@ -4,6 +4,7 @@ import { CssBaseline, Typography, Grid } from "@material-ui/core";
 import CircularProgress from "../CircularProgress";
 import styles from "./MainCardWithLoader.styles";
 
+//esse componente consiste num card que retorna um loader enquanto os dados não são renderizados
 function MainCardWithLoader(props) {
   const { classes, ready: isReady, component: Component } = props;
 

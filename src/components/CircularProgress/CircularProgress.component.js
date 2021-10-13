@@ -3,6 +3,8 @@ import { withStyles } from "@material-ui/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import styles from "./CircularProgress.styles";
 
+//Esse componente trabalha juntamente com o MainCardWithLoader,
+//Ele retorna o loarder que fica girando no card
 function CircularProgressComponent(props) {
   const { classes, size, display } = props;
   const displayCapitalized = useMemo(() => {

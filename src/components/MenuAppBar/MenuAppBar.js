@@ -8,6 +8,7 @@ import { withStyles } from "@material-ui/core/styles";
 import logo from '../../assets/ao-cubo-logo.webp';
 import styles from './MenuAppBar.styles';
 
+//Esse componente retorna a barra de menus
 function ButtonAppBar(props) {
   const {classes} = props;
 

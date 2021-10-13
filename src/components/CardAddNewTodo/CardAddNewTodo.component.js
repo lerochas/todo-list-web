@@ -4,6 +4,9 @@ import { InputLabel, MenuItem, Select } from "@mui/material"
 import { withStyles } from "@material-ui/styles";
 import styles from "./CardAddNewTodo.styles";
 
+//Esse componente possui um campo para o usuário digitar a tarefa, 
+//um select para o status, com as opções Concluído e Pendente
+//E um botão Adicionar
 function CardAddNewTodo(props) {
   const {classes, formik} = props;
 
